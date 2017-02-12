@@ -7,3 +7,9 @@
 body {
   background-color: #ADD8E6;
 }
+
+/* line 26, ../../compass/sass/styles.scss */
+img {
+  max-width: 1000px;
+  max-height: 800px;
+}

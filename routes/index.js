@@ -38,7 +38,7 @@ router.get('/', function(req, res, next) {
 			res.render('index', { title: 'Rate the cars', msg: "noImages" } );
 		}else{
 			res.render('index', { 
-				title: 'Rate the Cars',
+				title: 'Made in \'Merica',
 				imageToRender: '/images/'+results[randomIndex].imageUrl,
 				imageID: results[randomIndex].id
 			});		

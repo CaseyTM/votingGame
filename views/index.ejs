@@ -9,44 +9,36 @@
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row menu">
-			<a class="col-sm-6" href="/">
-				<div class="vote-tab text-center">
-					<h2>Vote Here</h2>
-				</div>
-			</a>
-			<a class="col-sm-6" href="/standings">
-				<div class="standings-tab text-center">
-					<h2>Standings</h2>
-				</div>
-			</a>
-		</div>
-	</div>
+<%if (typeof msg !== 'undefined') { %>	
 	<div class="container">
-		<div class="row text-center">
-			<div class="col-sm-12 text-center title">
-				<h1 class="text-center"><%=title %></h1>
-				<p class="text-center"> Vote to see what is the coolest!</p>
-			</div>
-			<%if (typeof msg !== 'undefined') { %>				
-				<h1>Voted on all!</h1>
-			<% }else{ %>
-				<div class="col-sm-8 vote-box">
-					<div class="col-sm-12 text-center img-box">
-						<img class="img-card" src="<%=imageToRender%>" alt="cars" />
-					</div>
-					<div class="col-sm-6 text-center btn-box">
-						<a class="text-center" href="/vote/cool/<%= imageID %>">
-							<input type="button" class="btn btn-lg btn-success" value="Cool" />
-						</a>
-						<a class="text-center" href="/vote/lame/<%=imageID%>">
-							<input type="button" class="btn btn-lg btn-danger" value="Lame" />
-						</a>
-					</div>
-				</div>
-			<% } %>
+		<div class="standings col-sm-6">
+			<h4 class="text-center">You have voted on everything</h4>
 		</div>
 	</div>
+	
+<% }else{ %>
+	<div class="container-fluid">
+		<div class="row text-center">
+			<div class="col-sm-6 text-center title">
+				<h1 class="text-center"><%=title %></h1>
+					<p class="text-center">Are these beautiful landscapes from 'Merica?</p>
+				
+				<div class="col-sm-6 text-center btn-box">
+					<a class="text-center" href="/vote/cool/<%= imageID %>">
+						<input type="button" class="btn btn-lg btn-success" value="Cool" />
+					</a>
+					<a class="text-center" href="/vote/lame/<%=imageID%>">
+						<input type="button" class="btn btn-lg btn-danger" value="Lame" />
+					</a>
+				</div>
+				
+				<div class="col-sm-12 text-center img-box">
+					<img class="img-card" src="<%=imageToRender%>" alt="cars" />
+				</div>
+			</div>
+		</div>	
+	</div>
+<% } %>
+	
 </body>
 </html>
